@@ -111,6 +111,7 @@ function hideSignup(){
 }
 
 function validateConexion(){
+    console.log('get');
     fetch('modelo/login.php?ind=1', {
         method: 'GET'
     })
