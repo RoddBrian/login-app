@@ -1,3 +1,4 @@
+validateConexion();
 $('.log-in').on('click', validateAccess);
 $('.sign-up').on('click', createUser);
 $('.sign-up-ref').on('click', showSignup);
@@ -102,10 +103,37 @@ function showSignup(){
     $('#form-sign-up')[0].reset();
 }
 
-
 function hideSignup(){
     $('.form-log-in').show();
     $('.form-sign-up').hide();
     $('#form-log-in')[0].reset();
     $('#form-sign-up')[0].reset();
+}
+
+function validateConexion(){
+    fetch('modelo/conexion.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+        }
+        })
+        .then(response => {
+            return response.text();
+        })
+        .then(data => {
+            console.log(data);
+        })
+        .catch(function (error) {
+            $.toast({
+                heading: 'Mensaje del sistema',
+                text: error,
+                icon: 'warning',
+                showHideTransition: 'fade',
+                bgColor: '#c13f3f',
+                loaderBg: '#FFFFFF',
+                allowToastClose: true,
+                position: 'top-right',
+                stack: false
+            });
+        });
 }
