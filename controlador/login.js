@@ -111,12 +111,8 @@ function hideSignup(){
 }
 
 function validateConexion(){
-    fetch('modelo/login.php', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: JSON.stringify({ ind: '1' })
+    fetch('modelo/login.php?ind=1', {
+        method: 'GET'
     })
     .then(response => response.json())
     .then(data => console.log(data))
