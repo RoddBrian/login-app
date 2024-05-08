@@ -111,14 +111,14 @@ function hideSignup(){
 }
 
 function validateConexion(){
-    fetch('modelo/conexion.php', {
+    fetch('modelo/conexion.php?op=validateConexion', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
         })
         .then(response => {
-            return response.text();
+            return response.json();
         })
         .then(data => {
             console.log(data);

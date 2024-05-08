@@ -47,6 +47,10 @@ switch ($_GET["op"]) {
         }
 
         break;
+
+    case "validateConexion":
+        echo json_encode(['conexion' => $conexion]);
+        break;
 }
 
 ?>
