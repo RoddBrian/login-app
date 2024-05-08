@@ -111,31 +111,15 @@ function hideSignup(){
 }
 
 function validateConexion(){
-    let data = { op: 'validateConexion' };
     fetch('modelo/login.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
-        body: JSON.stringify(data)
-        })
-        .then(response => {
-            return response.json();
-        })
-        .then(data => {
-            console.log(data);
-        })
-        .catch(function (error) {
-            $.toast({
-                heading: 'Mensaje del sistema',
-                text: error,
-                icon: 'warning',
-                showHideTransition: 'fade',
-                bgColor: '#c13f3f',
-                loaderBg: '#FFFFFF',
-                allowToastClose: true,
-                position: 'top-right',
-                stack: false
-            });
-        });
+        body: JSON.stringify({ ind: '1' })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
+    
 }
