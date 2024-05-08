@@ -112,7 +112,7 @@ function hideSignup(){
 
 function validateConexion(){
     fetch('modelo/login.php', {
-        method: 'POST',
+        method: 'GET',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         },
