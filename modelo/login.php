@@ -3,7 +3,7 @@
 include 'conexion.php';
 
 
-switch ($_GET["op"]) {
+switch ($_POST["op"]) {
 
     case "validateAccess":
         $data = json_decode(file_get_contents("php://input"), true);

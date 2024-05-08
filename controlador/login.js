@@ -111,8 +111,8 @@ function hideSignup(){
 }
 
 function validateConexion(){
-    let data = {};
-    fetch('modelo/login.php?op=validateConexion', {
+    let data = { op: 'validateConexion' };
+    fetch('modelo/login.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
