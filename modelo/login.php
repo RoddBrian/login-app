@@ -49,7 +49,8 @@ switch ($_GET["op"]) {
         break;
 
     case "validateConexion":
-        echo json_encode(['conexion' => $conexion]);
+        $data = json_decode(file_get_contents("php://input"), true);
+        echo json_encode(['result' => $conexion->connect_errno, 'dbName' => getenv('DB_NAME')]);
         break;
 }
 
