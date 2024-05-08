@@ -50,7 +50,7 @@ switch ($_GET["op"]) {
 
     case "validateConexion":
         $data = json_decode(file_get_contents("php://input"), true);
-        echo json_encode(['result' => $conexion->connect_errno, 'dbName' => getenv('DB_NAME')]);
+        echo json_encode(['result' => '1']);
         break;
 }
 
