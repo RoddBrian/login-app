@@ -114,7 +114,7 @@ function validateConexion(){
     fetch('modelo/login.php?ind=1', {
         method: 'GET'
     })
-    .then(response => response.json())
+    .then(response => response.text())
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
     
